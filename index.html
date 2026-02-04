@@ -3,35 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> AKAN-NAME-GEMERATOR</title>
+    <title>AKAN NAME GENERATOR</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1> Akan name generator</h1>
-        <p>
-            Type in your date and gender to find out your Akan name.
-        </p>
-        <div class="card-container">
-            <div class="card">
-        <form id="akan-form">
-            <label for="Birthdate"> Date of Birth</label>
-            <input type="date" id="Birthdate" required>
-            
-            <div class="gender-options">
-                <input type="radio" id="male" name="gender" value="male" required>
-                <label for="male"> Male</label>
 
-                <input type="radio" id="female" name="gender" value="female">
-                <label for="male"> Female</label>
-            </div>
-            <button type="send"> Get Akan Name</button>
-        </form>
+<div class="container">
+    <h1>Akan Name Generator</h1>
+    <p>Type in your date and gender to find out your Akan name.</p>
+
+    <div class="card-container">
+        <div class="card">
+            <form id="akan-form" onsubmit="generateName(); return false;">
+
+                <input type="number" id="day" placeholder="Day" min="1" max="31" required>
+                <input type="number" id="month" placeholder="Month" min="1" max="12" required>
+                <input type="number" id="year" placeholder="Year" required>
+
+                <div class="gender-options">
+                    <input type="radio" name="gender" value="male" required> Male
+                    <input type="radio" name="gender" value="female"> Female
+                </div>
+
+                <button type="submit">Get Akan Name</button>
+            </form>
+
         </div>
-        </div>
-            <div id="result">
-            </div>
-        </div>
-    
+    </div>
+
+    <div id="result"></div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

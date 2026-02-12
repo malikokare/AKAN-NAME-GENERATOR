@@ -1,31 +1,44 @@
-const form = document.getElementById("akanForm");
-const resultCard = document.getElementById("result");
-const resultText = document.getElementById("resultText");
-const errorDiv = document.getElementById("error");
-const clearBtn = document.getElementById("clearBtn");
+const formManual = document.getElementById("akanFormManual");
+const resultCard = document.getElementById("resultManual");
+const resultText = document.getElementById("resultTextManual");
+const errorDiv = document.getElementById("errorManual");
+const clearBtn = document.getElementById("clearManual");
 
-form.addEventListener("submit", function(event) {
-    event.preventDefault();
+formManual.addEventListener("submit", function(e){
+    e.preventDefault();
 
-    const birthdate = document.getElementById("birthdate").value;
-    const gender = document.querySelector('input[name="gender"]:checked');
+    const day = parseInt(document.getElementById("day").value);
+    const month = parseInt(document.getElementById("month").value);
+    const year = parseInt(document.getElementById("year").value);
+    const gender = document.querySelector('input[name="gender"]:checked')?.value;
 
+    // Reset previous messages
     errorDiv.textContent = "";
     resultCard.classList.add("hidden");
 
-    if (!birthdate || !gender) {
-        errorDiv.textContent = "Please select your birthdate and gender.";
+    // Validation
+    if(!day || !month || !year || !gender) {
+        errorDiv.textContent = "Please fill in all fields correctly.";
+        return;
+    }
+    if(day < 1 || day > 31) {
+        errorDiv.textContent = "Day must be between 1 and 31.";
+        return;
+    }
+    if(month < 1 || month > 12) {
+        errorDiv.textContent = "Month must be between 1 and 12.";
         return;
     }
 
-    const date = new Date(birthdate);
+    // Calculate day of the week
+    const date = new Date(year, month - 1, day);
     const dayOfWeek = date.getDay();
 
-    const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-    const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
-    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const maleNames = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
+    const femaleNames = ["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
+    const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-    const akanName = gender.value === "male" ? maleNames[dayOfWeek] : femaleNames[dayOfWeek];
+    const akanName = gender === "male" ? maleNames[dayOfWeek] : femaleNames[dayOfWeek];
 
     resultText.innerHTML = `
         You were born on <strong>${days[dayOfWeek]}</strong>.<br>
@@ -35,9 +48,9 @@ form.addEventListener("submit", function(event) {
     resultCard.classList.remove("hidden");
 });
 
-/* Clear button */
-clearBtn.addEventListener("click", function() {
-    form.reset();
+// Clear button
+clearBtn.addEventListener("click", function(){
+    formManual.reset();
     resultCard.classList.add("hidden");
     errorDiv.textContent = "";
 });

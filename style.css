@@ -1,102 +1,13 @@
-body {
+*{
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-/* Main container */
-.container {
-    text-align: center;
-    width: 400px;
-}
-
-/* Card design */
-.card {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    color: white;
-}
-
-/* Inputs */
-.form-group {
-    margin: 15px 0;
-    text-align: left;
-}
-
-input[type="date"] {
-    width: 100%;
-    padding: 8px;
-    border-radius: 6px;
-    border: none;
-}
-
-.gender-options {
-    display: flex;
-    gap: 15px;
-}
-
-/* Buttons */
-button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s ease;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-button[type="submit"] {
-    background: #1cc88a;
-    color: white;
-}
-
-.secondary-btn {
-    background: #e74a3b;
-    color: white;
-}
-
-/* Error */
-.error-message {
-    color: #ffdddd;
-    margin-top: 10px;
-    font-size: 14px;
-}
-
-/* Result card */
-.result-card {
-    margin-top: 20px;
-    padding: 15px;
-    background: white;
-    color: #333;
-    border-radius: 10px;
-    animation: fadeIn 0.6s ease-in-out;
-}
-
-.hidden {
-    display: none;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Footer */
-footer {
-    margin-top: 15px;
-    font-size: 12px;
-    color: white;
 }

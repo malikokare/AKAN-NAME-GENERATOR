@@ -42,7 +42,7 @@ h1 {
 input[type="number"] {
     width: 100%;
     padding: 8px;
-    border-radius: 7px;
+    border-radius: 8px;
     border: none;
     text-align: center;
 }

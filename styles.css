@@ -89,8 +89,8 @@ button[type="submit"] {
 .result-card {
     margin-top: 20px;
     padding: 15px;
-    background: white;
-    color: #333;
+    background: rgb(207, 17, 17);
+    color: #774d4d;
     border-radius: 10px;
     animation: fadeIn 0.6s ease-in-out;
 }

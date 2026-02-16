@@ -26,6 +26,7 @@ body {
 /* Headings */
 h1 {
     margin-bottom: 10px;
+    font-size: medium;
 }
 .description {
     font-size: 14px;

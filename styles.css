@@ -108,5 +108,7 @@ button[type="submit"] {
 footer {
     margin-top: 15px;
     font-size: 12px;
+    font-style: italic;
     color: white;
+
 }

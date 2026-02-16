@@ -80,7 +80,7 @@ button[type="submit"] {
 
 /* Error messages */
 .error-message {
-    color: #ffdddd;
+    color: #fbffdd;
     margin-top: 10px;
     font-size: 14px;
 }
